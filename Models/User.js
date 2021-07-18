@@ -10,6 +10,14 @@ class User {
         }
     }
 
+    async getById(id) {
+        try {
+            return await db.select('*').from("users").where('id', id).first();
+        }catch(err){
+            console.log(err);
+        }
+    }
+
     async createUser(name, email, password) {
         const password_hash = await bcrypt.hash(password, 10);
 

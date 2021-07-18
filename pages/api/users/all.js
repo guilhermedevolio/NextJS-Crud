@@ -1,4 +1,4 @@
-import User from '../../Models/User';
+import User from '../../../Models/User';
 
 // Fetch Users in Database
 export default async function handler(req, res) {
