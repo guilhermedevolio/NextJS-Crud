@@ -2,7 +2,7 @@ import React from 'react';
 const axios = require('axios');
 
 export async function getStaticProps() {
-    const res = await fetch('http://localhost:3000/api/users');
+    const res = await fetch('http://localhost:3000/api/users/all');
     const data = await res.json();
 
     if (!data) {
