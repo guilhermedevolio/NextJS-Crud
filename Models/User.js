@@ -10,6 +10,17 @@ class User {
         }
     }
 
+    async checkEmail(email) {
+        const email_check = await db.select('email').from("users").where('email', email).first();
+    
+        if(!email_check) {
+            return false;
+        }
+
+        return true;
+      
+    }
+
     async getById(id) {
         try {
             return await db.select('*').from("users").where('id', id).first();
@@ -27,6 +38,8 @@ class User {
             console.log(err);
         }
     }
+    
+    
 }
 
 module.exports = new User();

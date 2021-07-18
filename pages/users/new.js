@@ -6,21 +6,24 @@ export default function New() {
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [message, setMessage] = useState('');
 
     async function onSubmit(e) {
         e.preventDefault();
 
         if(name == undefined || email == undefined || password == undefined) {
-            alert('Preencha todos os campos');
+            setMessage('Preencha todos os campos');
         }
+
         const response = await axios.post('/api/users/new', {name,email,password});
 
-        console.log(response.data);
+        setMessage(response.data.message);
     }
 
     return (
         <div>
              <h2>Form de Cadastro</h2>
+             {message && message}
              <form method="POST">
                 <div>
                     <label>Nome</label>
