@@ -7,5 +7,11 @@
 <li>/users/new [name, email, password] ->  Register New User</li>
 </ul>
 
+## Libs
+<ul>
+<li>BCrypt</li>
+<li>KnexJS</li>
+</ul>
+
 
 
